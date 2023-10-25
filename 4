@@ -1,0 +1,27 @@
+let nextId = 1;
+const invoices = [];
+
+function createInvoice() {
+  const id = nextId++;
+  invoices.push({ id });
+  return id;
+}
+
+function findInvoiceById(id) {
+  return invoices.find(invoice => invoice.id === id);
+}
+
+// Creazione di istanze di Invoice
+createInvoice();
+createInvoice();
+createInvoice();
+
+// funzione per trovare un Invoice con un ID specifico
+const invoiceIdToFind = 2;
+const foundInvoice = findInvoiceById(invoiceIdToFind);
+
+if (foundInvoice) {
+  console.log("Invoice trovato con ID " + foundInvoice.id);
+} else {
+  console.log("Nessun Invoice trovato con ID " + invoiceIdToFind);
+}

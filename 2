@@ -1,0 +1,26 @@
+function trovaMaxMin(array) {
+  if (array.length === 0) {
+    return "L'array è vuoto";
+  }
+
+  let max = array[0];
+  let min = array[0];
+
+  for (const numero of array) {
+    if (numero > max) {
+      max = numero;
+    }
+    if (numero < min) {
+      min = numero;
+    }
+  }
+
+  return { max, min };
+}
+
+
+const numeri = [12, 5, 7, 31, 8, -3, 25, 0];
+const risultato = trovaMaxMin(numeri);
+
+console.log("Valore massimo:", risultato.max);
+console.log("Valore minimo:", risultato.min);
